@@ -3,6 +3,7 @@ import cn from 'classnames';
 
 import Home from './Home';
 import Events from './Events';
+import EventInfo from './EventInfo';
 import NoRoute404 from './NoRoute404';
 import {
   BrowserRouter as Router,
@@ -25,12 +26,13 @@ class App extends Component {
           <div className={styles.header}>
             <div className={styles.container}>
               <Link to="/"><i className={cn("fas fa-kiss-wink-heart", styles.logo)}></i></Link>
-                Dough Dating
+              Dough for Monroe
             </div>
           </div>
           <div className={styles.content}>
             <Routes>
               <Route exact path="/" element={<Events />}/>
+              <Route exact path="/event/:id" element={<EventInfo />}/>
               <Route element={<NoRoute404 />}/>
             </Routes>
           </div>

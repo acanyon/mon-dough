@@ -56,25 +56,27 @@ class Events extends Component {
   renderEvent(props) {
     return (
       <div className={styles.eventPane} key={props.id}>
-        <div className={styles.eventContainer}>
-          <div style={{backgroundImage: `url(${props.barPhoto})`}} className={styles.eventPhoto}></div>
-          <div className={styles.eventInfo}>
-            <div className={styles.header}>
-              {`${props.eventName} @ ${props.eventLocationName}`}
-            </div>
-            <div className={styles.tagContainer}>
-              {props.tags.map((tag) => <div className={styles.tag} key={tag}>{tag}</div>)}
-            </div>
-            <div className={styles.fillSpace}></div>
-            <div className={styles.footer}>
-              <div className={styles.rsvpCount}>
-                {props.waitlist ? 'SOLD OUT' : `${props.rsvpCount} attending`}
+        <Link to={`/event/${props.id}`}>
+          <div className={styles.eventContainer}>
+            <div style={{backgroundImage: `url(${props.barPhoto})`}} className={styles.eventPhoto}></div>
+            <div className={styles.eventInfo}>
+              <div className={styles.header}>
+                {`${props.eventName} @ ${props.eventLocationName}`}
               </div>
-              <div className={styles.rsvpButton}>{props.waitlist ? 'Waitlst' : 'RSVP'}</div>
+              <div className={styles.tagContainer}>
+                {props.tags.map((tag) => <div className={styles.tag} key={tag}>{tag}</div>)}
+              </div>
+              <div className={styles.fillSpace}></div>
+              <div className={styles.footer}>
+                <div className={styles.rsvpCount}>
+                  {props.waitlist ? 'SOLD OUT' : `${props.rsvpCount} attending`}
+                </div>
+                <div className={styles.rsvpButton}>{props.waitlist ? 'Waitlst' : 'RSVP'}</div>
+              </div>
             </div>
+            <div className={styles.chevron}><i className="fas fa-chevron-right"></i></div>
           </div>
-          <div className={styles.chevron}><i className="fas fa-chevron-right"></i></div>
-        </div>
+        </Link>
       </div>
     )
   }

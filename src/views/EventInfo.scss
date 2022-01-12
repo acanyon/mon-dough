@@ -1,0 +1,99 @@
+@import '../styles/plugins';
+
+.body {
+  position: relative;
+  border-bottom: 5px solid rgba($shadow, 0.3);
+  background-color: $tan;
+  padding: 10px;
+}
+
+.eventPane {
+  background-color: $white;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.eventContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.eventPhoto {
+  height: 150px;
+  width: 150px;
+  background-size: contain;
+  margin-right: 20px;
+  flex: 0 0 auto;
+}
+
+.eventInfo {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.chevron {
+  flex: 0 0 auto;
+  background-color: #fdfbfb;
+  color: gray;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -10px -10px -10px 20px;
+  padding: 10px 15px;
+}
+
+.fillSpace {
+  min-height: 20px;
+  flex: 1 0 auto;
+}
+
+.eventHeader {
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.tagContainer {
+  display: flex;
+  margin-top: 10px;
+}
+
+.tag {
+  padding: 7px;
+  background-color: yellow;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  color: gray;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rsvpCount {
+  color: gray;
+}
+
+.rsvpButton {
+  text-align: center;
+  padding: 10px 30px;
+  background-color: $red;
+  color: white;
+  width: 110px;
+  box-sizing: border-box;
+}
+
