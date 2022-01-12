@@ -10,13 +10,23 @@
 
 .header {
   background-color: $red;
+  color: white;
+  font-weight: 600;
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
 }
 
+.logo {
+    color: white;
+    font-size: 24px;
+    display: inline-block;
+}
+
 .content {
   flex: 1 0 auto;
+  background-color: white;
+  overflow: scroll;
 }
 
 .linkSpacer {
@@ -32,6 +42,7 @@
   display: flex;
   justify-content: space-between;
   flex: 1 1 auto;
+  align-items: center;
 }
 
 .navigational {
@@ -40,10 +51,4 @@
   vertical-align: bottom;
   padding-top: 28px;
   text-align: right;
-}
-
-.footer {
-  background-color: $gray;
-  padding: 50px 0;
-  text-align: center;
 }
