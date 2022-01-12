@@ -34,6 +34,8 @@
 
 .eventInfo {
   flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .chevron {
@@ -44,8 +46,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: -10px;
+  margin: -10px -10px -10px 20px;
   padding: 10px 15px;
+}
+
+.fillSpace {
+  min-height: 20px;
+  flex: 1 0 auto;
 }
 
 .eventHeader {
@@ -69,5 +76,24 @@
   font-size: 14px;
   border-radius: 5px;
   color: gray;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rsvpCount {
+  color: gray;
+}
+
+.rsvpButton {
+  text-align: center;
+  padding: 10px 30px;
+  background-color: $red;
+  color: white;
+  width: 110px;
+  box-sizing: border-box;
 }
 
