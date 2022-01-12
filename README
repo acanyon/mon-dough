@@ -1,6 +1,8 @@
 npm start -- compiles frontend with watch
 nodemon server.js -- runs api/backend server
 
+`localhost:8080`
+
 run `npm install` first on clone and frequently if packages (package.json) change
 
 ** Install **

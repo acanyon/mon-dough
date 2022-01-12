@@ -5,7 +5,8 @@
   font-family: "Helvetica", sans-serif;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100%;
+  overflow: hidden;
 }
 
 .header {
@@ -18,13 +19,13 @@
 }
 
 .logo {
-    color: white;
-    font-size: 24px;
-    display: inline-block;
+  color: white;
+  font-size: 24px;
+  display: inline-block;
 }
 
 .content {
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   background-color: white;
   overflow: scroll;
 }

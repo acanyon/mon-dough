@@ -32,7 +32,17 @@ const EVENTS = [
     eventLocationName: 'Hi-Lo Club',
     eventAddress: '1423 Polk St, San Francisco, CA 94109',
     rsvpCount: 16,
-  },
+  }, {
+    id: 4,
+    eventName: 'Group Gathering',
+    waitlist: true,
+    barPhoto: 'https://cdn.cnn.com/cnnnext/dam/assets/200622142705-suspended-texas-bars-restricted-super-tease.jpg',
+    tags: ["Bring yo' crew"],
+    eventDate: 'Thurs Jan 20 - 6:30pm',
+    eventLocationName: 'Hi-Lo Club',
+    eventAddress: '1423 Polk St, San Francisco, CA 94109',
+    rsvpCount: 16,
+  }
 ]
 
 class Events extends Component {
