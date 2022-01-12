@@ -1,0 +1,71 @@
+@import '../styles/plugins';
+
+.body {
+  background-color: $red;
+  position: relative;
+  border-bottom: 5px solid rgba($shadow, 0.3);
+}
+
+.container {
+  @include contentWrapper;
+  padding-bottom: 30px;
+}
+
+.flightSubmissionContainer {
+  background: white;
+  border: 5px solid $darkRed;
+  padding: 15px;
+}
+
+.formTitle {
+  @include title;
+  text-align: center;
+}
+
+.inputRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputColumn {
+  flex: 1 1 auto;
+  margin-left: 10px;
+
+  &:nth-child(1) {
+    margin-left: 0;
+  }
+}
+
+.input {
+  @include input;
+  font-size: 24px;
+}
+
+.userIcon {
+  font-size: 24px;
+  padding: 12px 20px 0 10px;
+}
+
+.flightSubmission {
+  .formSubmitButton {
+    @include button;
+    width: 100%;
+  }
+}
+
+.heroText {
+  @include title;
+  color: $white;
+  font-size: 30px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.heroImage {
+  width: 100%;
+  width: 100%;
+  margin-top: -90px;
+  margin-left: 50p
+}
+
+

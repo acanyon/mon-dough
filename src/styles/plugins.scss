@@ -1,0 +1,80 @@
+$red: #C70C0C;
+$darkRed: #960A0A;
+$tan: #f0efec;
+$shadow: #D7D5CD;
+$gray: #D2D1CD;
+$white: #FFFFFF;
+
+$bodyWidth: 800px;
+
+@mixin title {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@mixin contentWrapper {
+  max-width: $bodyWidth + 40px;
+  padding: 0 20px;
+  margin: auto;
+}
+
+@mixin input {
+  border: 1px solid black;
+  border-radius: 0;
+  box-sizing: border-box;
+  flex-grow: 1 1 auto;
+  margin: 2px 0;
+  padding: 5px 10px;
+  width: 100%;
+
+  &::placeholder,
+  &:-ms-input-placeholder, &::-ms-input-placeholder {
+    color: $shadow;
+  }
+
+  &:focus {
+    border: 3px solid black;
+    outline: none;
+    margin: 0 -2px;
+    width: calc(100% + 4px);
+  }
+
+  &[disabled] {
+    border: 1px solid $shadow;
+    color: $shadow;
+  }
+}
+
+@mixin button {
+  @include title;
+  border: 3px solid $red;
+  background-color: $red;
+  color: white;
+  cursor: pointer;
+  min-width: 105px;
+  outline: none;
+  padding: 10px 20px;
+  position: relative;
+  text-align: center;
+
+  &:link, &:visited {
+    color: white;
+  }
+
+  &:hover {
+    border: 3px solid $darkRed;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin table {
+  tr th {
+    @include title;
+    text-align: left;
+  }
+}

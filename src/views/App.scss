@@ -1,0 +1,49 @@
+@import '../styles/plugins';
+
+.body {
+  background-color: $tan;
+  font-family: "Helvetica", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: $red;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.linkSpacer {
+  display: inline-block;
+  &:before {
+    content: '-';
+    padding: 0 5px;
+  }
+}
+
+.container {
+  @include contentWrapper;
+  display: flex;
+  justify-content: space-between;
+  flex: 1 1 auto;
+}
+
+.navigational {
+  @include title;
+  color: white;
+  vertical-align: bottom;
+  padding-top: 28px;
+  text-align: right;
+}
+
+.footer {
+  background-color: $gray;
+  padding: 50px 0;
+  text-align: center;
+}

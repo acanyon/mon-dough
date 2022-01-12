@@ -1,0 +1,20 @@
+npm start -- compiles frontend with watch
+nodemon server.js -- runs server
+
+run `npm install` first on clone
+
+** Install **
+Install homebrew
+`$ brew install npm`
+`$ brew install node`
+`$ npm install nodemon -g`
+
+Setup git
+`$ git config --global user.name "John Doe"`
+`$ git config --global user.email johndoe@example.com`
+add `ssh-keygen` to list of hosts on GitHub
+
+Clone install
+`$ git clone <repo>`
+`$ cd ~/mon-dough`
+`$ npm install`
