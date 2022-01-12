@@ -4,7 +4,7 @@ import Home from './Home';
 import NoRoute404 from './NoRoute404';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   Link
 } from "react-router-dom";
@@ -22,21 +22,17 @@ class App extends Component {
         <Router>
           <div className={styles.header}>
             <div className={styles.container}>
-              <Link to="/"><i class="fas fa-kiss-wink-heart"></i></Link>
+              <Link to="/"><i className="fas fa-kiss-wink-heart"></i></Link>
             </div>
           </div>
           <div className={styles.content}>
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route>
-                <NoRoute404 />
-              </Route>
-            </Switch>
+            <Routes>
+              <Route exact path="/" element={<Home />}/>
+              <Route element={<NoRoute404 />}/>
+            </Routes>
           </div>
           <div className={styles.footer}>
-            <i class="fas fa-kiss-wink-heart"></i>
+            <i className="fas fa-kiss-wink-heart"></i>
           </div>
         </Router>
       </div>

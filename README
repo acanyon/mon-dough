@@ -1,7 +1,7 @@
 npm start -- compiles frontend with watch
-nodemon server.js -- runs server
+nodemon server.js -- runs api/backend server
 
-run `npm install` first on clone
+run `npm install` first on clone and frequently if packages (package.json) change
 
 ** Install **
 Install homebrew
