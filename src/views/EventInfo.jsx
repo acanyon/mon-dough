@@ -17,44 +17,41 @@ const EVENT = {
 class EventInfo extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      boundParams: useParams(),
-    }
 
-    // TODO - use fetch to grab events from API server
+    console.log('event id', this.props.id)
+    // TODO - use fetch to grab event from API server
     // https://reactjs.org/docs/faq-ajax.html
   }
 
   render() {
     const eventProps = EVENT;
-    debugger
+
+    console.log('event id', this.props.id)
 
     return (
-      <div className={styles.eventPane} key={eventProps.id}>
-        <Link to={`/event/${eventProps.id}`}>
-          <div className={styles.eventContainer}>
-            <div style={{backgroundImage: `url(${eventProps.barPhoto})`}} className={styles.eventPhoto}></div>
-            <div className={styles.eventInfo}>
-              <div className={styles.header}>
-                {`${eventProps.eventName} @ ${eventProps.eventLocationName}`}
-              </div>
-              <div className={styles.tagContainer}>
-                {eventProps.tags.map((tag) => <div className={styles.tag} key={tag}>{tag}</div>)}
-              </div>
-              <div className={styles.fillSpace}></div>
-              <div className={styles.footer}>
-                <div className={styles.rsvpCount}>
-                  {eventProps.waitlist ? 'SOLD OUT' : `${eventProps.rsvpCount} attending`}
-                </div>
-                <div className={styles.rsvpButton}>{eventProps.waitlist ? 'Waitlst' : 'RSVP'}</div>
-              </div>
+      <Link className={styles.eventPane} key={eventProps.id} to={`/event/${eventProps.id}`}>
+        <div className={styles.eventContainer}>
+          <div style={{backgroundImage: `url(${eventProps.barPhoto})`}} className={styles.eventPhoto}></div>
+          <div className={styles.eventInfo}>
+            <div className={styles.eventHeader}>
+              {`${eventProps.eventName} @ ${eventProps.eventLocationName}`}
             </div>
-            <div className={styles.chevron}><i className="fas fa-chevron-right"></i></div>
+            <div className={styles.tagContainer}>
+              {eventProps.tags.map((tag) => <div className={styles.tag} key={tag}>{tag}</div>)}
+            </div>
+            <div className={styles.fillSpace}></div>
+            <div className={styles.footer}>
+              <div className={styles.rsvpCount}>
+                {eventProps.waitlist ? 'SOLD OUT' : `${eventProps.rsvpCount} attending`}
+              </div>
+              <div className={styles.rsvpButton}>{eventProps.waitlist ? 'Waitlst' : 'RSVP'}</div>
+            </div>
           </div>
-        </Link>
-      </div>
+          <div className={styles.chevron}><i className="fas fa-chevron-right"></i></div>
+        </div>
+      </Link>
     )
   }
 }
 
-export default EventInfo;
+export default (props) => <EventInfo {...useParams()} {...props} />

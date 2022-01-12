@@ -11,6 +11,12 @@
   background-color: $white;
   margin: 10px 0;
   padding: 10px;
+  font-size: 14px;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 .container {
@@ -30,6 +36,8 @@
   background-size: contain;
   margin-right: 20px;
   flex: 0 0 auto;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .eventInfo {
@@ -57,7 +65,8 @@
 
 .eventHeader {
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  font-size: 18px;
 }
 
 .tagContainer {
@@ -73,7 +82,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   margin-right: 10px;
-  font-size: 14px;
   border-radius: 5px;
   color: gray;
 }
@@ -95,5 +103,11 @@
   color: white;
   width: 110px;
   box-sizing: border-box;
+
+  @include button;
+
+  &.waitlist {
+    opacity: 0.5;
+  }
 }
 

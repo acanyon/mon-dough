@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import cn from 'classnames';
 
 import styles from './Events.scss';
 
@@ -18,6 +19,7 @@ const EVENTS = [
     eventName: 'Single Marketing Professionals',
     barPhoto: 'https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2019/08/14/97f04adefa11426fa88d78611b9e1133_web-Harvard_and_Stone-14_lax_credit_harvardandstone_INLINE.jpg',
     tags: ['Singles only', 'Marketing professionals'],
+    waitlist: true,
     eventDate: 'Thurs Jan 20 - 6:30pm',
     eventLocationName: 'Hi-Lo Club',
     eventAddress: '1423 Polk St, San Francisco, CA 94109',
@@ -25,7 +27,6 @@ const EVENTS = [
   }, {
     id: 3,
     eventName: 'Group Gathering',
-    waitlist: true,
     barPhoto: 'https://cdn.cnn.com/cnnnext/dam/assets/200622142705-suspended-texas-bars-restricted-super-tease.jpg',
     tags: ["Bring yo' crew"],
     eventDate: 'Thurs Jan 20 - 6:30pm',
@@ -60,7 +61,7 @@ class Events extends Component {
           <div className={styles.eventContainer}>
             <div style={{backgroundImage: `url(${props.barPhoto})`}} className={styles.eventPhoto}></div>
             <div className={styles.eventInfo}>
-              <div className={styles.header}>
+              <div className={styles.eventHeader}>
                 {`${props.eventName} @ ${props.eventLocationName}`}
               </div>
               <div className={styles.tagContainer}>
@@ -71,7 +72,7 @@ class Events extends Component {
                 <div className={styles.rsvpCount}>
                   {props.waitlist ? 'SOLD OUT' : `${props.rsvpCount} attending`}
                 </div>
-                <div className={styles.rsvpButton}>{props.waitlist ? 'Waitlst' : 'RSVP'}</div>
+                <div className={cn(styles.rsvpButton, props.waitlist && styles.waitlist)}>{props.waitlist ? 'Waitlst' : 'RSVP'}</div>
               </div>
             </div>
             <div className={styles.chevron}><i className="fas fa-chevron-right"></i></div>
