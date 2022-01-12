@@ -7,7 +7,7 @@ import styles from './Events.scss';
 const EVENTS = [
   {
     id: 1,
-    eventName: 'Tech Asks You to Bring a Friend',
+    eventName: 'Tech Professionals Bring a Friend',
     barPhoto: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Bar-P1030319.jpg/1200px-Bar-P1030319.jpg',
     tags: ['Plus one welcome', '20-30 yrs old'],
     eventDate: 'Wed Jan 19 - 6:30pm',
