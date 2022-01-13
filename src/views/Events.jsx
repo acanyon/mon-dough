@@ -64,6 +64,7 @@ class Events extends Component {
               <div className={styles.eventHeader}>
                 {`${props.eventName} @ ${props.eventLocationName}`}
               </div>
+              <div className={styles.eventDate}>{props.eventDate}</div>
               <div className={styles.tagContainer}>
                 {props.tags.map((tag) => <div className={styles.tag} key={tag}>{tag}</div>)}
               </div>
