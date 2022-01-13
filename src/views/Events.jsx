@@ -57,7 +57,7 @@ class Events extends Component {
   renderEvent(props) {
     return (
       <div className={styles.eventPane} key={props.id}>
-        <Link to={`/event/${props.id}`}>
+        <Link to={`/event/details/${props.id}`}>
           <div className={styles.eventContainer}>
             <div style={{backgroundImage: `url(${props.barPhoto})`}} className={styles.eventPhoto}></div>
             <div className={styles.eventInfo}>
@@ -72,7 +72,12 @@ class Events extends Component {
                 <div className={styles.rsvpCount}>
                   {props.waitlist ? 'SOLD OUT' : `${props.rsvpCount} attending`}
                 </div>
-                <div className={cn(styles.rsvpButton, props.waitlist && styles.waitlist)}>{props.waitlist ? 'Waitlst' : 'RSVP'}</div>
+                <div
+                  className={cn(styles.rsvpButton, props.waitlist && styles.waitlist)}
+                  onClick={(evt) => evt.preventDefault()}
+                >
+                  {props.waitlist ? 'Waitlst' : 'RSVP'}
+                </div>
               </div>
             </div>
             <div className={styles.chevron}><i className="fas fa-chevron-right"></i></div>
