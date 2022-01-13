@@ -40,7 +40,7 @@ class App extends Component {
               <div className={styles.navBarButton} onClick={this.onNavOpen.bind(this)}>
                 <i className="fas fa-bars"></i>
               </div>
-              <Link to="/"><i className={cn("fas fa-kiss-wink-heart", styles.logo)}></i></Link>
+              <Link to="/" onClick={this.onNavClose.bind(this)}><i className={cn("fas fa-kiss-wink-heart", styles.logo)}></i></Link>
               <div>Dough for Monroe</div>
             </div>
           </div>
