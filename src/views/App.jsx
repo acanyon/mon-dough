@@ -4,6 +4,7 @@ import cn from 'classnames';
 import Home from './Home';
 import Events from './Events';
 import EventInfo from './EventInfo';
+import NavigationPane from './NavigationPane';
 import NoRoute404 from './NoRoute404';
 import {
   BrowserRouter as Router,
@@ -17,6 +18,17 @@ import styles from './App.scss';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isNavOpen: false,
+    };
+  }
+
+  onNavOpen() {
+    this.setState({isNavOpen: true});
+  }
+
+  onNavClose() {
+    this.setState({isNavOpen: false});
   }
 
   render() {
@@ -25,14 +37,18 @@ class App extends Component {
         <Router>
           <div className={styles.header}>
             <div className={styles.container}>
+              <div className={styles.navBarButton} onClick={this.onNavOpen.bind(this)}>
+                <i className="fas fa-bars"></i>
+              </div>
               <Link to="/"><i className={cn("fas fa-kiss-wink-heart", styles.logo)}></i></Link>
-              Dough for Monroe
+              <div>Dough for Monroe</div>
             </div>
           </div>
           <div className={styles.content}>
+            <NavigationPane isOpen={this.state.isNavOpen} onClose={this.onNavClose.bind(this)}/>
             <Routes>
               <Route exact path="/" element={<Events />}/>
-              <Route exact path="/event/:id" element={<EventInfo />}/>
+              <Route exact path="/event/details/:eventId" element={<EventInfo />}/>
               <Route element={<NoRoute404 />}/>
             </Routes>
           </div>

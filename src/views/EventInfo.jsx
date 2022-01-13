@@ -18,7 +18,7 @@ class EventInfo extends Component {
   constructor(props) {
     super(props);
 
-    console.log('event id', this.props.id)
+    console.log('event id', this.props.eventId)
     // TODO - use fetch to grab event from API server
     // https://reactjs.org/docs/faq-ajax.html
   }
@@ -26,10 +26,8 @@ class EventInfo extends Component {
   render() {
     const eventProps = EVENT;
 
-    console.log('event id', this.props.id)
-
     return (
-      <Link className={styles.eventPane} key={eventProps.id} to={`/event/${eventProps.id}`}>
+      <div className={styles.eventPane}>
         <div className={styles.eventContainer}>
           <div style={{backgroundImage: `url(${eventProps.barPhoto})`}} className={styles.eventPhoto}></div>
           <div className={styles.eventInfo}>
@@ -47,9 +45,8 @@ class EventInfo extends Component {
               <div className={styles.rsvpButton}>{eventProps.waitlist ? 'Waitlst' : 'RSVP'}</div>
             </div>
           </div>
-          <div className={styles.chevron}><i className="fas fa-chevron-right"></i></div>
         </div>
-      </Link>
+      </div>
     )
   }
 }

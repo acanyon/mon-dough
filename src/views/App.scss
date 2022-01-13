@@ -24,10 +24,18 @@
   display: inline-block;
 }
 
+.navBarButton {
+  color: white;
+  font-size: 24px;
+  display: inline-block;
+  cursor: pointer;
+}
+
 .content {
   flex: 1 1 auto;
   background-color: white;
   overflow: scroll;
+  position: relative;
 }
 
 .linkSpacer {
@@ -44,6 +52,10 @@
   justify-content: space-between;
   flex: 1 1 auto;
   align-items: center;
+
+  &>div {
+    width: 100px;
+  }
 }
 
 .navigational {
